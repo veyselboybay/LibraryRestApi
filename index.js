@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+// Create an express app instance
 const app = express();
 
 // Connect to MongoDB Atlas
