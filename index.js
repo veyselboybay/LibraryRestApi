@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./routes/routes");
+const authRouter = require("./routes/auth_routes");
+const authMiddleware = require("./authMiddleware");
 require("dotenv").config();
 
 // Create an express app instance
@@ -10,7 +12,8 @@ const app = express();
 app.use(express.json());
 
 // Create endpoint connection
-app.use("/api/v1", router);
+app.use("/api/v1", authMiddleware, router);
+app.use("/api/v1", authRouter);
 
 // Connect to MongoDB Atlas
 mongoose
