@@ -1,9 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const router = require("./routes/routes");
 require("dotenv").config();
 
 // Create an express app instance
 const app = express();
+
+// Accept JSON Object from body
+app.use(express.json());
+
+// Create endpoint connection
+app.use("/api/v1", router);
 
 // Connect to MongoDB Atlas
 mongoose
