@@ -64,10 +64,41 @@ const getLibraryBook = async (req, res) => {
   }
 };
 
+// UPDATE the book
+const updateBook = async (req, res) => {
+  const { libraryId, bookId } = req.params;
+  if (libraryId == null || bookId == null) {
+    return res.status(400).json("There is no required id");
+  }
+  const book = req.body;
+  try {
+    const updatedBook = await bookModel.findOneAndUpdate({ _id: bookId }, book);
+    return res.status(200).json(updatedBook);
+  } catch (error) {
+    return res.json(error);
+  }
+};
+
+// DELETE the book
+const deleteBook = async (req, res) => {
+  const { libraryId, bookId } = req.params;
+  if (libraryId == null || bookId == null) {
+    return res.status(400).json("There is no required id");
+  }
+  try {
+    const deletedBook = await bookModel.findOneAndDelete({ _id: bookId });
+    return res.status(200).json(deletedBook);
+  } catch (error) {
+    return res.json(error);
+  }
+};
+
 module.exports = {
   getLibraries,
   createLibrary,
   getAllBooks,
   createBook,
   getLibraryBook,
+  updateBook,
+  deleteBook,
 };
