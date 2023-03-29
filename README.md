@@ -21,4 +21,6 @@ I developed a REST api using Nodejs & Expressjs for a library application. It is
   1. `@hapi/joi` => To validate the user data before database interaction,
   2. `bcryptjs` => To crypt the user password before saving to database,
   3. `jsonwebtoken` => To secure the endpoints,
-  4. `Postman` => To test the api
+  4. `Postman` => To test the api,
+  5. `Express` => To create a server,
+  6. `Mongoose` => To connect MongoDB Cloud database
