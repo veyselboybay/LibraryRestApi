@@ -4,6 +4,6 @@ I developed a REST api using Nodejs & Expressjs for a library application. It is
  1. Clone or fork the application,
  2. Run `npm install` to install dependencies,
  3. Create `.env` file in the root directory and make sure to have the following content:
-  a. `DB_CONNECTION=<your-db-connection-link>` => This will connect the api to Database, in my case I used `MongoDB Cloud` link,
-  b. `JWT_SECRET=<your-secret>` => This will be used to signing or verifying the `auth-token`
+  * `DB_CONNECTION=<your-db-connection-link>` => This will connect the api to Database, in my case I used `MongoDB Cloud` link,
+  * `JWT_SECRET=<your-secret>` => This will be used to signing or verifying the `auth-token`
  4. Run `nodemon` to start the application.
